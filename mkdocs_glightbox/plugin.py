@@ -40,6 +40,8 @@ def prune(elem):
         if not found_first_parent:
             # Centering the table in its immediate parent div
             parent["style"] = "text-align: center"
+            # Adding an "open" attribute for collapsible sections
+            parent["open"] = ""
             found_first_parent = True
         parent.clear()
         parent.append(pruned)
