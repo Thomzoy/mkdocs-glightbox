@@ -1,9 +1,6 @@
 site_name: MkDocs GLightbox
 
-repo_url: https://github.com/blueswen/mkdocs-glightbox
-repo_name: blueswen/mkdocs-glightbox
-site_url: https://github.com/blueswen/mkdocs-glightbox/
-site_dir: ../docs
+site_dir: build_site
 edit_uri: ""
 
 theme:
@@ -46,15 +43,19 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - meta
+  - abbr
+  - md_in_html
 
 plugins:
-  - glightbox
+  - glightbox:
+      max_preview_lines: 2
 
 nav:
   - Home: index.md
   - Taiwan:
     - Sea: taiwan/sea.md
     - Mountain: taiwan/mountain.md
+    - Table: taiwan/table.md
   - Gallery: gallery.md
   - More Flexibility:
     - Disable by image: disable/image.md

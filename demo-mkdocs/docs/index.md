@@ -4,6 +4,8 @@ A MkDocs plugin supports image lightbox with [GLightbox](https://github.com/biat
 
 GLightbox is a pure javascript lightbox library with mobile support.
 
+[Hover me](https://example.com "I'm a tooltip!")
+
 ## Dependency
 
 1. Python Package
@@ -41,7 +43,7 @@ GLightbox is a pure javascript lightbox library with mobile support.
     ```
 
     | Option          | Default | Description                                                                                                  |
-    |-----------------|---------|--------------------------------------------------------------------------------------------------------------|
+    | --------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
     | touchNavigation | true    | Enable or disable the touch navigation (swipe).                                                              |
     | loop            | false   | Loop slides on end.                                                                                          |
     | effect          | zoom    | Name of the effect on lightbox open. (zoom, fade, none)                                                      |
@@ -64,9 +66,91 @@ Sunset over Taipei City. Credit: [Thomas Tucker](https://unsplash.com/photos/au3
 ![Lanyu, Taiwan](./images/robson-hatsukami-morgan-lanyu.jpg) 
 Lanyu, Taiwan. Credit: [Robson Hatsukami Morgan](https://unsplash.com/photos/T8LZZvKc9Jc)
 
-![Kenting, Taiwan](./images/yuhan-chang-kenting.jpg) 
+![Kenting, Taiwan](./images/yuhan-chang-kenting.jpg){ .off-glb }
 Kenting, Taiwan. Credit: [Yuhan Chang](https://unsplash.com/photos/ROWXoqmqyjk)
+
+<figure markdown>
+  [![Image title](./images/yuhan-chang-kenting.jpg){ .off-glb }](./stats_summary.html)
+</figure>
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Blueswen/mkdocs-glightbox/blob/main/LICENSE) file for details.
+<table>
+<thead>
+  <tr>
+    <th>lalala</th>
+    <th>jirejfgre</th>
+    <th>jfiozjfroe</th>
+    <th>ffjeizozfz</th>
+    <th>feiozef</th>
+    <th>fjeiof</th>
+    <th>fferiofoze</th>
+    <th>freofer</th>
+    <th>fenofer</th>
+    <th>fezofre</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td></td>
+    <td>vfd</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>ddd</td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+    <td>d</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>d</td>
+    <td>d</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>

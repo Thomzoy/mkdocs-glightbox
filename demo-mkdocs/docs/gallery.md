@@ -9,3 +9,5 @@ Hallstatt, Austria. Credit: Blueswen
 
 ![Castelo de São Jorge, Lisbon, Portugal](./images/gallery/blueswen-lisbon.jpeg) 
 Castelo de São Jorge, Lisbon, Portugal. Credit: Blueswen
+
+<iframe src="../../stats_summary.html"></iframe>
