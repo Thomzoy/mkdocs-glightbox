@@ -29,6 +29,7 @@ def get_pruned_tables(html):
 
 def prune(elem):
     pruned = elem
+    del pruned["class"]  # For uniform styling
     parent = pruned.parent
     found_first_parent = False
 
