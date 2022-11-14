@@ -130,7 +130,7 @@ class LightboxPlugin(BasePlugin):
         tables = get_pruned_tables(output)
         output_dir = config["site_dir"] / pathlib.Path(page.url)
 
-        skip_class += ["off-glb"] + self.config["skip_classes"]
+        skip_class = ["off-glb"] + self.config["skip_classes"]
 
         for i, table in enumerate(tables):
             output_file = output_dir / f"{i}.html"
