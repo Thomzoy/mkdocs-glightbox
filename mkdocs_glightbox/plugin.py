@@ -144,7 +144,7 @@ class LightboxPlugin(BasePlugin):
             for table in tables
         ]
         for i, table in enumerate(tables):
-            if set(skip_class) & set(table.get("class", [])):
+            if set(skip_class) & (set(table.get("class", [])) | set(table.parent.get("class", []))):
                 continue
             output_file = f"{i}.html"
             table["title"] = "Click to view the full table"
