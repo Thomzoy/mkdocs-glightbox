@@ -141,7 +141,7 @@ class LightboxPlugin(BasePlugin):
             for table in tables
         ]
         for i, table in enumerate(tables):
-            output_file = output_dir / f"{i}.html"
+            output_file = f"{i}.html"
             table["title"] = "Click to view the full table"
 
             a = soup.new_tag("a")
