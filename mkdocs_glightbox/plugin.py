@@ -51,8 +51,9 @@ def prune(elem):
     return pruned
 
 
-def limit_number_lines(table, max_n_lines):
-    [row.extract() for i, row in enumerate(table.find_all("tr")) if i > max_n_lines]
+def limit_number_lines(table, max_n_lines, skip_class=[]):
+    if set(skip_class) & (set(table.get("class", [])) | set(table.parent.get("class", []))):
+        return table
     last_row = list(table.find_all("tr"))[-1]
     for cell in last_row.find_all("td"):
         cell.string = "..."
@@ -140,7 +141,7 @@ class LightboxPlugin(BasePlugin):
         # Adding GLightBox link + limiting number of lines
         tables = soup.find_all("table")
         tables = [
-            limit_number_lines(table, plugin_config["max_preview_lines"])
+            limit_number_lines(table, plugin_config["max_preview_lines"], skip_class)
             for table in tables
         ]
         for i, table in enumerate(tables):
