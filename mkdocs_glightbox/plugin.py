@@ -71,6 +71,7 @@ class LightboxPlugin(BasePlugin):
         ("zoomable", config_options.Type(bool, default=True)),
         ("draggable", config_options.Type(bool, default=True)),
         ("max_preview_lines", config_options.Type(int, default=5)),
+        ("skip_classes", config_options.Type(list, default=[])),
     )
 
     def on_post_page(self, output, page, config, **kwargs):
@@ -129,6 +130,8 @@ class LightboxPlugin(BasePlugin):
         tables = get_pruned_tables(output)
         output_dir = config["site_dir"] / pathlib.Path(page.url)
 
+        skip_class += ["off-glb"] + self.config["skip_classes"]
+
         for i, table in enumerate(tables):
             output_file = output_dir / f"{i}.html"
             output_file.parent.mkdir(exist_ok=True, parents=True)
@@ -141,6 +144,8 @@ class LightboxPlugin(BasePlugin):
             for table in tables
         ]
         for i, table in enumerate(tables):
+            if set(skip_class) & set(table.get("class", [])):
+                continue
             output_file = f"{i}.html"
             table["title"] = "Click to view the full table"
 
@@ -159,7 +164,7 @@ class LightboxPlugin(BasePlugin):
         # skip emoji img with index as class name from pymdownx.emoji https://facelessuser.github.io/pymdown-extensions/extensions/emoji/
         skip_class = ["emojione", "twemoji", "gemoji"]
         # skip image with off-glb class
-        skip_class += ["off-glb"]
+        skip_class += ["off-glb"] + self.config["skip_classes"]
         soup = BeautifulSoup(html, "html.parser")
         imgs = soup.find_all(["img", "iframe"])
         for img in imgs:
@@ -169,18 +174,6 @@ class LightboxPlugin(BasePlugin):
             a["class"] = "glightbox"
             a["href"] = img.get("src", "")
             img.wrap(a)
-
-        # tables = soup.find_all("table")
-        # output_dir = config["site_dir"] / pathlib.Path(page.url)
-        # for i, table in enumerate(tables):
-        #     if set(skip_class) & set(table.get("class", [])):
-        #         continue
-        #     output_file = output_dir / f"{i}.html"
-
-        #     a = soup.new_tag("a")
-        #     a["class"] = "glightbox"
-        #     a["href"] = output_file
-        #     table.wrap(a)
 
         return str(soup)
 
