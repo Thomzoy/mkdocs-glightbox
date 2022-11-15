@@ -54,6 +54,7 @@ def prune(elem):
 def limit_number_lines(table, max_n_lines, skip_class=[]):
     if set(skip_class) & (set(table.get("class", [])) | set(table.parent.get("class", []))):
         return table
+    [row.extract() for i, row in enumerate(table.find_all("tr")) if i > max_n_lines]
     last_row = list(table.find_all("tr"))[-1]
     for cell in last_row.find_all("td"):
         cell.string = "..."
