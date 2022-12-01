@@ -5,18 +5,13 @@ with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="mkdocs-glightbox",
+    name="mkdocs-glightbox-tables",
     version="0.2.1",
-    author="Blueswen",
-    author_email="blueswen.tw@gmail.com",
-    url = "https://blueswen.github.io/mkdocs-glightbox",
-    project_urls = {
-        "Source": "https://github.com/Blueswen/mkdocs-glightbox",
-    },
+    author="ThomasPJ",
     keywords = ["mkdocs", "plugin", "lightbox"],
     packages=find_packages(),
     license="MIT",
-    description="MkDocs plugin supports image lightbox with GLightbox.",
+    description="MkDocs plugin supports image and table lightbox with GLightbox.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=[
