@@ -33,9 +33,11 @@ def prune(elem):
     parent = pruned.parent
 
     while parent is not None:  # and "html" not in parent.name:
-        if (parent.get("class", None) is None) or ("tabbed" in parent.get("class", "")) :
+        print("CLASS: ",parent.get("class"))
+        if (parent.get("class", None) is None) or ("tabbed" in "".join(parent.get("class", ""))) :
             parent = parent.parent
             continue
+        print("Done: ", parent.get("class"))
             
         parent["style"] = "text-align: center"
         # Adding an "open" attribute for collapsible sections
@@ -46,7 +48,6 @@ def prune(elem):
         parent = parent.parent
 
     return pruned
-
 
 def limit_number_lines(table, max_n_lines, skip_class=[]):
     if set(skip_class) & (set(table.get("class", [])) | set(table.parent.get("class", []))):
