@@ -31,18 +31,15 @@ def prune(elem):
     pruned = elem
     del pruned["class"]  # For uniform styling
     parent = pruned.parent
-    found_first_parent = False
 
     while parent is not None:  # and "html" not in parent.name:
-        if parent.get("class", None) is None:
+        if (parent.get("class", None) is None) or ("tabbed" in parent.get("class", "")) :
             parent = parent.parent
             continue
-        if not found_first_parent:
-            # Centering the table in its immediate parent div
-            parent["style"] = "text-align: center"
-            # Adding an "open" attribute for collapsible sections
-            parent["open"] = ""
-            found_first_parent = True
+            
+        parent["style"] = "text-align: center"
+        # Adding an "open" attribute for collapsible sections
+        parent["open"] = ""
         parent.clear()
         parent.append(pruned)
         pruned = parent
