@@ -37,7 +37,6 @@ def prune(elem):
         if (parent.get("class", None) is None) or ("tabbed" in "".join(parent.get("class", ""))) :
             parent = parent.parent
             continue
-        print("Done: ", parent.get("class"))
             
         parent["style"] = "text-align: center"
         # Adding an "open" attribute for collapsible sections
